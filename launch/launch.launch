@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Include main launch file -->
+  <include file="$(find zed_wrapper)/launch/zed.launch"></include>
+  <include file="$(find mavros)/launch/px4.launch"></include>
+  <node name="hydrone_mission_planner" pkg="hydrone_mission_planner" type="hydrone_mission_planner.py" />
+  <node name="send_serial" pkg="hydrone_mission_planner" type="send_serial.py" />
+  <node name="read_qrcode" pkg="hydrone_mission_planner" type="read_qrcode.py" /> 
+  <!--<node name="read_gas" pkg="hydrone_mission_planner" type="read_gas.py" /> -->
+</launch>

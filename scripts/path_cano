@@ -1,0 +1,55 @@
+    call_set_mode("GUIDED", 4)
+    print("Mode set")
+
+    time.sleep(1)
+
+    rospy.set_param("/mavros/vision_pose/tf/listen", True)
+    pub_reset_gps()
+
+    time.sleep(5)
+
+    call_arming(True)
+    print("Armed")
+
+    time.sleep(5)
+
+    call_arming(True)
+    print("Armed")
+
+    call_takeoff(1.0)
+    print("Took off")
+
+    time.sleep(10)
+
+    set_target_position(-0.25, 6.25, 1.0)
+    print("Target set")
+
+    time.sleep(20)
+
+
+
+    set_target_position(-6.0, 0.3, 1.0)
+    print("Target set")
+
+    time.sleep(20)
+
+
+
+    set_target_position(-3.0, 4.0, 1.0)
+    print("Target set")
+
+    time.sleep(20)
+
+
+    set_target_position(0.0, 0.0, 1.0)
+    print("Target set")
+
+    time.sleep(20)
+
+   
+
+    
+    call_land(2.0)
+    print("Land")
+
+    time.sleep(10)
